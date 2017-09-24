@@ -1,0 +1,122 @@
+html{
+	width: 100%;
+	overflow-x: hidden;
+}
+body{
+    width: 100%;
+}
+
+@include scrollbars(.5em, #282828, rgba(0, 0, 0, 0));
+
+a, h1, h2, h3, h4, h5{
+	@include animate(all, 320ms);
+	&:hover,
+	&:before,
+	&:after{
+		@include animate(all, 320ms);
+		text-decoration: none;
+		img{
+			@include animate(all, 320ms);
+		}
+	}
+	img{
+		@include animate(all, 320ms);
+	}
+}
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+    li{
+    	list-style: none;
+    }
+}
+
+h1, h2, h3{
+	color: $text-color;
+	font-family: $title-font;
+	a{
+		font-family: $title-font;
+		color: $text-color;
+	}
+}
+
+h4, h5{
+	color: $text-color;
+	font-family: $subtitle-font;
+	a{
+		color: $text-color;
+		font-family: $subtitle-font;
+	}
+}
+
+p, span, i, b, time, small, caption{
+	color: $text-color;
+	font-family: $text-font;
+	a{
+		color: $text-color;
+		font-family: $text-font;
+	}
+}
+
+li, a{
+	color: $text-color;
+	font-family: $subtitle-font;
+}
+
+.container{
+	max-width: 1200px !important;
+}
+
+.gradient-text {
+	font-size: 72px;
+	background: -webkit-linear-gradient(#eee, #333);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.shadow-5{
+	-webkit-box-shadow: 0px 15px 50px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 15px 50px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 15px 50px 0px rgba(0,0,0,0.3);
+}
+
+.hide-on-start{
+	opacity: 0;
+	@include animate(all, 2000ms);
+}
+.show{
+	opacity: 1;
+	@include animate(all, 2000ms);
+}
+
+.animated{
+	opacity: 0;
+	&.a-right{
+		@include transform(translateX(1500px));
+		@include animate(all, 1000ms);
+	}
+	&.a-left{
+		@include transform(translateX(-1500px));
+		@include animate(all, 1000ms);
+	}
+	&.a-down{
+		@include transform(translateY(50px));
+		@include animate(all, 1000ms);
+	}
+	&.on-view{	
+		opacity: 1;
+		&.a-right{
+			@include transform(translateX(0px));
+			@include animate(all, 1000ms);
+		}
+		&.a-left{
+			@include transform(translateX(0px));
+			@include animate(all, 1000ms);
+		}
+		&.a-down{
+			@include transform(translateX(0px));
+			@include animate(all, 1000ms);
+		}
+	}	
+}
